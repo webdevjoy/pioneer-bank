@@ -12,3 +12,18 @@ body {
 #transection-area {
   display: none;
 }
+.status {
+  margin: 0px 20px;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.deposite {
+  background-color: slateblue;
+}
+.withdrow {
+  background-color: lightsalmon;
+}
+.balance {
+  background-color: orange;
+}
