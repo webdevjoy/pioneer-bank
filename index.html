@@ -40,9 +40,9 @@
     <div id="transection-area">
       <div class="row">
         <div class="col-md-4">
-          <div class="deposite status">
+          <div class="deposit status">
             <h5>Deposit</h5>
-            <h2>$00</h2>
+            <h2>$ <span id="currentDeposit">00</span></h2>
           </div>
         </div>
         <div class="col-md-4">
@@ -54,7 +54,7 @@
         <div class="col-md-4">
           <div class="balance status">
             <h5>Balance</h5>
-            <h2>$1240</h2>
+            <h2>$ <span id="currentBalance">1240</span></h2>
           </div>
         </div>
       </div>
@@ -106,7 +106,21 @@
       const depositBtn = document.getElementById("addDeposit");
       depositBtn.addEventListener("click", function () {
         const depositAmount = document.getElementById("depositAmount").value;
-        const depositNumber = parseFloat("depositAmount");
+        const depositNumber = parseFloat(depositAmount);
+
+        const currentDeposit =
+          document.getElementById("currentDeposit").innerText;
+        const currentDepositNumber = parseFloat(currentDeposit);
+        const totalDeposit = depositNumber + currentDepositNumber;
+        document.getElementById("currentDeposit").innerText = totalDeposit;
+
+        const currentBalance =
+          document.getElementById("currentBalance").innerText;
+        const currentNumber = parseFloat(currentBalance);
+        const totalBalance = depositNumber + currentNumber;
+        document.getElementById("currentBalance").innerText = totalBalance;
+
+        document.getElementById("depositAmount").value = "";
       });
     </script>
   </body>
